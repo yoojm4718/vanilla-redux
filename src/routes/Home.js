@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { actionCreators } from "store";
 
-const Home = ({ toDos, dispatch }) => {
+const Home = ({ toDos, addToDo }) => {
   const [text, setText] = useState("");
   const onChange = (event) => {
     setText(event.target.value);
@@ -10,7 +10,7 @@ const Home = ({ toDos, dispatch }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     setText("");
-    dispatch(addToDo(text));
+    addToDo(text);
   };
   return (
     <>
